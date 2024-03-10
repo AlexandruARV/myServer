@@ -8,7 +8,58 @@
 </head>
 
 <body>
-  <div>This is my server</div>
+  <h1> Own data </h1>
+  <input type="text" id="'input">
+  <button id="button">Get Data</button>
+
+  <h1> Outside data </h1>
+  <input type="text" id="'input2">
+  <button id="button2">Get Data</button>
+
+  <form class="form" style="margin-top:20px;">
+    <input name="username" type="text" placeholder="username">
+    <input name="password" type="password" placeholder="password">
+
+    <button type="submit">submit</button>
+  </form>
+
+  <script>
+    const btn1 = document.getElementById('button');
+    const getData = async function () {
+      const res = await fetch('https://server-63ql.onrender.com');
+      const data = await res.json();
+      console.log(data);
+
+    }
+
+    btn1.addEventListener('click', () => {
+      getData();
+    })
+
+    // const formEl = document.querySelector('.form');
+
+    // formEl.addEventListener('submit', event => {
+    //   event.preventDefault();
+
+    //   const formData = new FormData(formEl);
+
+    //   const data = Object.fromEntries(formData);
+    //   console.log(JSON.stringify(data));
+
+    //   fetch('/formPost', {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify(data)
+    //   }).then(res => res.json())
+    //     .then(data => console.log(data))
+    //     .catch(err => console.error(err))
+
+    // })
+
+
+  </script>
 </body>
 
 </html>
