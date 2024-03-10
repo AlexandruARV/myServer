@@ -4,7 +4,7 @@ const data = { lala: 2, dada: 3 };
 
 const server = http.createServer((req, res) => {
   res.writeHead(200, { "Content-Type": "text/plain" });
-  res.end(data.json());
+  res.end("this is a json");
 });
 
 const PORT = process.env.PORT || 3000;
