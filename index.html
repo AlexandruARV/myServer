@@ -40,27 +40,27 @@
       getData();
     })
 
-    // const formEl = document.querySelector('.form');
+    const formEl = document.querySelector('.form');
 
-    // formEl.addEventListener('submit', event => {
-    //   event.preventDefault();
+    formEl.addEventListener('submit', event => {
+      event.preventDefault();
 
-    //   const formData = new FormData(formEl);
+      const formData = new FormData(formEl);
 
-    //   const data = Object.fromEntries(formData);
-    //   console.log(JSON.stringify(data));
+      const data = Object.fromEntries(formData);
+      console.log(JSON.stringify(data));
 
-    //   fetch('/formPost', {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify(data)
-    //   }).then(res => res.json())
-    //     .then(data => console.log(data))
-    //     .catch(err => console.error(err))
+      fetch('/formPost', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      }).then(res => res.json())
+        .then(data => console.log(data))
+        .catch(err => console.error(err))
 
-    // })
+    })
 
 
   </script>
