@@ -1,4 +1,5 @@
 const express = require("express");
+const bodyParser = require("body-parser");
 
 const data = { lala: 2, dada: 3 };
 
@@ -11,6 +12,9 @@ console.log(JSON.stringify(data2));
 const app = express();
 
 const sotreData = [];
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
