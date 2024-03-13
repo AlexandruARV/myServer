@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
   res.status(200).json(data);
 });
 
-app.post("/", (req, res) => {
+app.post("/receiveData", (req, res) => {
   res.json(sotreData);
   console.log(req.body);
   sotreData.push(req.body);
