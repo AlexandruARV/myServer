@@ -5,8 +5,7 @@ const data = { lala: 2, dada: 3 };
 console.log(JSON.stringify(data));
 
 const server = http.createServer((req, res) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  next();
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
   res.writeHead(200, { "Content-Type": "application/json" });
   res.end(JSON.stringify(data));
 });
