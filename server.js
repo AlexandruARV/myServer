@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
   res.status(200).json(data);
 });
 
-app.post("https://server-63ql.onrender.com", (req, res) => {
+app.post("/", (req, res) => {
   res.json(sotreData);
   console.log(req.body);
   sotreData.push(req.body);
