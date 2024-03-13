@@ -50,7 +50,7 @@
       const data = Object.fromEntries(formData);
       console.log(JSON.stringify(data));
 
-      fetch('/', {
+      fetch('https://server-63ql.onrender.com/receiveData', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
