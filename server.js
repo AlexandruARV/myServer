@@ -4,6 +4,10 @@ const data = { lala: 2, dada: 3 };
 
 console.log(JSON.stringify(data));
 
+const data2 = { lala: 2, dada: 3 };
+
+console.log(JSON.stringify(data2));
+
 const app = express();
 
 const sotreData = [];
@@ -19,11 +23,16 @@ app.get("/", (req, res) => {
   res.status(200).json(data);
 });
 
+app.get("/newData", (req, res) => {
+  res.status(200).json(data2);
+});
+
 app.post("/receiveData", (req, res) => {
   res.json(sotreData);
   console.log(req.body);
   sotreData.push(req.body);
   console.log(sotreData);
+  res.status(200).json({ message: "Form submitted successfully" });
 });
 
 const PORT = process.env.PORT || 3000;
