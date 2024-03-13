@@ -24,12 +24,18 @@
   </form>
 
   <script>
+    'use strict';
     const btn1 = document.getElementById('button');
     const getData = async function () {
-      const res = await fetch('https://server-63ql.onrender.com/');
-      const data = await res.json();
-      console.log(data);
+      try {
 
+
+        const res = await fetch('https://server-63ql.onrender.com/');
+        const data = await res.json();
+        console.log(data);
+      } catch (err) {
+        console.error(err);
+      }
     }
 
     btn1.addEventListener('click', () => {
